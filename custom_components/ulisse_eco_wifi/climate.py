@@ -126,6 +126,7 @@ class Ulisse13EcoDCIWiFi(ClimateEntity):
         self._config = config
 
         if CONF_UNIQUE_ID in config:
+            self.unique_id = config[CONF_UNIQUE_ID]
             self.entity_id = ENTITY_ID_FORMAT.format(DOMAIN + "_" + config[CONF_UNIQUE_ID])
 
         self.serializer = UlisseEco13DCIWiFiSerializer
